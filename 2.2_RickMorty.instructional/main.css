@@ -1,1 +1,10 @@
 /* STYLE HERE */
+body {
+    display: block;
+    text-align: center;
+}
+img {
+    border: 10px solid black;
+    border-radius: 10px;
+}
+

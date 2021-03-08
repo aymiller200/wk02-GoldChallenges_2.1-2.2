@@ -19,18 +19,24 @@
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
 
-let image = document.querySelector('#imageOne')
-let anotherImage = document.querySelector('#imageTwo')
-console.log(image);
-console.log(anotherImage)
-
-let data = () => {
-    fetch('https://rickandmortyapi.com/api/character')
-    .then(function(result){
-        console.log(result.json())
-    })    
+let data = async () => {
+    let response = await fetch('https://rickandmortyapi.com/api/character')
+    let json = await response.json()
+    console.log(json)
+    display(json)
 }
+
+function display(info) {
+    let image = document.querySelector('#imageOne')
+    let anotherImage = document.querySelector('#imageTwo')
+    image.src = info.results[6].image;
+    anotherImage.src = info.results[2].image;
+}
+
 data()
+
+
+
 
 
 
